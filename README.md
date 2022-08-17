@@ -4,8 +4,8 @@ Make your machine look like a sandbox/vm. This *might* harden your computer agai
 
 ## Features
 
-- Fake processes like `Wireshark.exe`, `ProcessHacker.exe`, etc.
-- VM software artifacts like dlls and services
+- Have fake processes like `Wireshark.exe`, `ProcessHacker.exe`, etc. be created at startup
+- Create VM software artifacts like dlls and services
 
 ## Installing
 
