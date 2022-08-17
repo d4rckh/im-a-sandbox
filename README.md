@@ -13,4 +13,9 @@ Make your machine look like a sandbox/vm. This *might* harden your computer agai
 2. Disable Windows Defender's real time protection
 3. Clone the GitHub repostiroy
 4. Run `.\ImASandox.ps1`
-5. Enable Windows Defender back
+5. Save the script output to a file
+6. Enable Windows Defender back
+
+## Removing
+
+Currently, there isn't a way to revert the changes made. Fortunately, the script logs every change to the console, making it easy for you to track what got modified.
