@@ -17,8 +17,11 @@ $CurrentWorkingDir = (Get-Location).Path
 
 # create some vbox artifacts
 New-Item -Path 'C:\Windows\System32\vboxhook.dll' -ItemType File
+IAS-Log "info" "Created vboxhook.dll file in System32"
+
 # New-Item -Path 'HKLM:\SYSTEM\ControlSet001\Services' -ItemType 'VboxSF'
 New-Service -Name "VboxSF" -BinaryPathName "C:\Windows\System32\calc.exe"
+IAS-Log "info" "Created VboxSF service"
 
 # fake processes that do nothing 
 Add-MpPreference -ExclusionPath "$CurrentWorkingDir\bin"
@@ -35,5 +38,5 @@ foreach ($pName in $pNames) {
   $pPath = "C:\Users\$UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\$pName"
   Add-MpPreference -ExclusionPath $pPath
   Copy-Item -Path ".\bin\donothing.exe" -Destination $pPath
-  IAS-Log "INFO" "Created fake process at startup: $pName"
+  IAS-Log "info" "Created fake process at startup: $pName"
 }
